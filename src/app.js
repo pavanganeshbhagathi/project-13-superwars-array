@@ -23,13 +23,33 @@ const PLAYERS = [
 
 // initialize players with image and strength
 const initPlayers = (players) => {
-    let detailedPlayers = '';
+    /* // let detailedPlayers = players.map(player, index) =>
+    //  {
+    //    return   
+    //  };
+    var detailedPlayer = players.map(player,i)=>
+         return {
+             name: player,
+             image: "images/super-" + (i + 1) + ".png",
+             strength: getRandomStrength(),
+             type: Math.ceil(Math.random() * 109) % 2 == 0 ? "hero" : "villain"
+         }
+     });
+    
+     // Instead of forloop use Map method
+     // Code here
 
-    // Instead of forloop use Map method
-    // Code here
+     return detailedPlayers;*/
+    return players.map((player, i) => {
+        return {
+            name: player,
+            image: "images/super-" + (i + 1) + ".png",
+            strength: getRandomStrength(),
+            type: Math.ceil(Math.random() * 109) % 2 == 0 ? "hero" : "villain"
+        };
+    });
+};
 
-    return detailedPlayers;
-}
 
 // getting random strength
 const getRandomStrength = () => {
@@ -38,13 +58,30 @@ const getRandomStrength = () => {
 
 // Build player template
 const buildPlayers = (players, type) => {
-    let fragment = '';
+
 
     // Instead of using for loop
     // Use chaining of Array methods - filter, map and join
     // Type your code here
+    /* let fragment = players.filter(player => players.type == type).map(
+         player =>
+         `<div class="player">
+                 <img src="${player.image}" alt="">
+                 <div class="name">${player.name}</div>
+                 <div class="strength">${player.strength}</div>
+             </div>`
+     ).join();
+     return fragment;
+     */
+    return players.filter(player => player.type == type).map(
+        player =>
+        `<div class="player">
+                 <img src="${player.image}" alt="">
+                 <div class="name">${player.name}</div>
+                 <div class="strength">${player.strength}</div>
+             </div>`
 
-    return fragment;
+    ).join();
 }
 
 // Display players in HTML
