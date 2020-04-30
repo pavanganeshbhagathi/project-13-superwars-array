@@ -63,7 +63,7 @@ const buildPlayers = (players, type) => {
     // Instead of using for loop
     // Use chaining of Array methods - filter, map and join
     // Type your code here
-    /* let fragment = players.filter(player => players.type == type).map(
+    /* let fragment = players.filter(player => player.type == type).map(
          player =>
          `<div class="player">
                  <img src="${player.image}" alt="">
