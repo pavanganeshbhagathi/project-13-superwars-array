@@ -45,7 +45,7 @@ const initPlayers = (players) => {
             name: player,
             image: "images/super-" + (i + 1) + ".png",
             strength: getRandomStrength(),
-            type: Math.ceil(Math.random() * 109) % 2 == 0 ? "hero" : "villain"
+            type: i % 2 == 0 ? "hero" : "villain"
         };
     });
 };
